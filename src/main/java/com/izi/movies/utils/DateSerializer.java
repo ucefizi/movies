@@ -21,6 +21,10 @@ public class DateSerializer extends StdSerializer<DateTime> {
     private static DateTimeFormatter formatter =
             DateTimeFormat.forPattern(DATE_FORMAT);
 
+    public DateSerializer() {
+        this(null);
+    }
+
     public DateSerializer(Class<DateTime> t) {
         super(t);
     }

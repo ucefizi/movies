@@ -28,7 +28,7 @@ public class Movie {
     @Column
     private String title;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<MovieDirector> directors;
 
     @Column

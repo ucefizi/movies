@@ -1,5 +1,6 @@
 package com.izi.movies.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,6 +23,7 @@ public class MovieDirector {
     @Column(unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "directors")
+    @JsonIgnore
+    @ManyToMany(mappedBy = "directors", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<Movie> movies;
 }

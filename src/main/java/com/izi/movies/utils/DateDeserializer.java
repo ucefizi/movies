@@ -22,6 +22,10 @@ public class DateDeserializer extends StdDeserializer<DateTime> {
     private SimpleDateFormat formatter =
             new SimpleDateFormat(DATE_FORMAT);
 
+    public DateDeserializer() {
+        this(null);
+    }
+
     public DateDeserializer(Class<?> vc) {
         super(vc);
     }
