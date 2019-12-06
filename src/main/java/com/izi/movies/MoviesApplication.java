@@ -85,8 +85,11 @@ public class MoviesApplication {
 			String[] directorStrings = ((String) movieMap.get("director")).split(", ");
 			List<MovieDirector> directors = new ArrayList<>();
 			for (String directorString: directorStrings) {
-				MovieDirector director = new MovieDirector();
-				director.setName(directorString);
+				MovieDirector director = directorRepository.findByName(directorString);
+				if (director == null) {
+					director = new MovieDirector();
+					director.setName(directorString);
+				}
 				directors.add(director);
 			}
 			directors = directorRepository.saveAll(directors);

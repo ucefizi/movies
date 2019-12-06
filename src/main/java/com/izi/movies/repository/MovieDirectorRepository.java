@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface MovieDirectorRepository extends JpaRepository<MovieDirector, Long> {
+    MovieDirector findByName(String name);
 }

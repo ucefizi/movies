@@ -28,7 +28,7 @@ public class Movie {
     @Column
     private String title;
 
-    @OneToMany
+    @ManyToMany
     private List<MovieDirector> directors;
 
     @Column

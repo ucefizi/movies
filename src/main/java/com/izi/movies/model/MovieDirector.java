@@ -3,10 +3,8 @@ package com.izi.movies.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Entity that models a movie director object
@@ -21,6 +19,9 @@ public class MovieDirector {
     @GeneratedValue
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String name;
+
+    @ManyToMany(mappedBy = "directors")
+    private List<Movie> movies;
 }
