@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.izi.movies.utils.DateDeserializer;
 import com.izi.movies.utils.DateSerializer;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
@@ -17,20 +19,25 @@ import java.util.List;
  *
  * @author <a href="mailto:youssefizikitn@gmail.com">Youssef Izikitne</a>
  */
+
+@ApiModel
 @Entity
 @Data
 @NoArgsConstructor
 public class Movie {
+    @ApiModelProperty(example = "1")
     @Id
     @GeneratedValue
     private Long id;
 
+    @ApiModelProperty(example = "Avengers: Infinity War")
     @Column
     private String title;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<MovieDirector> directors;
 
+    @ApiModelProperty(example = "25/04/2018")
     @Column
     @JsonSerialize(using = DateSerializer.class)
     @JsonDeserialize(using = DateDeserializer.class)
