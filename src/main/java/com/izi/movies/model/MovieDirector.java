@@ -33,4 +33,9 @@ public class MovieDirector {
     @JsonIgnore
     @ManyToMany(mappedBy = "directors", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private List<Movie> movies;
+
+    @Override
+    public String toString() {
+        return "'" + name + "'";
+    }
 }

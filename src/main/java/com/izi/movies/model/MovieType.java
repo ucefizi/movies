@@ -30,4 +30,9 @@ public class MovieType {
     @ApiModelProperty(example = "sci-fi")
     @Column
     private String name;
+
+    @Override
+    public String toString() {
+        return "type=" + name;
+    }
 }

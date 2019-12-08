@@ -46,4 +46,8 @@ public class Movie {
 
     @OneToOne
     private MovieType type;
+
+    public String toString() {
+        return "Movie(title='" + title + "', directors=" + directors + ", " + type + ", releaseDate=" + releaseDate.toString("dd/MM/yyyy") +")";
+    }
 }
