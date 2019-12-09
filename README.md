@@ -4,6 +4,7 @@
 This is a REST API for a movie library application. It's developed under Spring Boot and uses Gradle for building and dependency management.
 
 ## Running the application:
+You only need JDK 8 installed to run the application.
 ### Clone this repo:
       git clone https://github.com/youssefizikitn/movies  
   ### Build it:
