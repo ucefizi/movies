@@ -6,7 +6,7 @@ This is a REST API for a movie library application. It's developed under Spring 
 ## Running the application:
 You only need JDK 8 installed to run the application.
 ### Clone this repo:
-      git clone https://github.com/youssefizikitn/movies  
+      git clone https://github.com/ucefizi/movies  
   ### Build it:
       cd movies
       ./gradlew build
